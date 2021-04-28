@@ -1,34 +1,10 @@
-#
-# Copyright (C) 2020 The LineageOS Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 # Inherit common board flags
 -include device/samsung/sm8150-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/samsung/beyond0qlte
 
-#WITH_GMS := true
-
-# APEX
-#DEXPREOPT_GENERATE_APEX_IMAGE := true
-TARGET_FLATTEN_APEX := true
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-
-# Board
-#TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Kernel
 TARGET_KERNEL_CONFIG := lineage_beyond0qlte_defconfig
@@ -59,12 +35,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 118112366592
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 6853492736
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_PRODUCT := system/product
-
-# Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
-
-# Root
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
